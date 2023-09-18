@@ -21,7 +21,7 @@ public:
     ~view();
 
 private slots:
-    void on_pushButton_clicked();
+    void on_OpenFIle_clicked();
 
 private:
     Ui::view *ui_;

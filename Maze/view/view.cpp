@@ -14,11 +14,14 @@ view::~view()
 }
 
 
-void view::on_pushButton_clicked()
+void view::on_OpenFIle_clicked()
 {
-    QString str = QFileDialog::getOpenFileName(this, "Выберите файл", QDir::homePath() + "/Downloads", "All Files (*)");
+    QString str = QFileDialog::getOpenFileName(this,
+                                               "Выберите файл",
+                                               QDir::homePath() + "/Downloads",
+                                               "All Files (*)");
 
-    ui_->label->setText(str);
+
 
     std::string line;
 
@@ -32,5 +35,6 @@ void view::on_pushButton_clicked()
     }
     in.close();  
 
+    ui_->file_name->setText(str);
 }
 
