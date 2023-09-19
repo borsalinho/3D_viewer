@@ -8,20 +8,9 @@
 
 class Controller {
 public:
-    Controller(const Controller&) = delete;
-    Controller& operator=(const Controller&) = delete;
-
-    static Controller* Instance() {
-        if (!instance_) {
-            instance_ = new Controller();
-        }
-        return instance_;
-    }
-    void CheckController() { std::cout << "Controller has been created" << std::endl; }
+    Controller(Model* m) :m_(m){};
 private:
-    Controller() { std::cout << "Controller" << std::endl; }
-    static Controller* instance_;
-
+    Model* m_;
 };
 
 #endif // CONTROLLER_H

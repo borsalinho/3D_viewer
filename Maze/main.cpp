@@ -1,16 +1,13 @@
 #include "view/view.h"
-// #include "model/model.h"
 
 #include <QApplication>
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    Model *v = Model::Instance();
-    v->CheckModel();
-    Controller *c = Controller::Instance();
-    c->CheckController();
-    view w;
+    Model m;
+    Controller c(&m);
+    view w(&c);
     w.show();
     return a.exec();
 }

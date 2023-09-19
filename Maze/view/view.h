@@ -19,7 +19,7 @@ class view : public QMainWindow
     Q_OBJECT
 
 public:
-    view(QWidget *parent = nullptr);
+    view(Controller *c, QWidget *parent = nullptr);
     ~view();
 
 private slots:
@@ -27,5 +27,6 @@ private slots:
 
 private:
     Ui::view *ui_;
+    Controller* c_;
 };
 #endif // VIEW_H

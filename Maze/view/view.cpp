@@ -1,12 +1,11 @@
 #include "view.h"
 #include "ui_view.h"
 
-view::view(QWidget *parent)
+view::view(Controller *c, QWidget *parent)
     : QMainWindow(parent)
+    , c_(c)
     , ui_(new Ui::view)
 {
-    // Controller *Controller_ = Controller::Instance();
-    // Controller_->CheckController();
     ui_->setupUi(this);
 }
 
