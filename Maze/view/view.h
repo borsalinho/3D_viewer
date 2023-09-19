@@ -4,6 +4,8 @@
 #include <QMainWindow>
 #include <QFileDialog>
 
+#include "../controller/controller.h"
+
 #include <fstream>
 #include <iostream>
 #include <string>

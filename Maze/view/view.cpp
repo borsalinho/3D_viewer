@@ -5,6 +5,8 @@ view::view(QWidget *parent)
     : QMainWindow(parent)
     , ui_(new Ui::view)
 {
+    // Controller *Controller_ = Controller::Instance();
+    // Controller_->CheckController();
     ui_->setupUi(this);
 }
 
@@ -22,6 +24,7 @@ void view::on_OpenFIle_clicked()
                                                "All Files (*)");
 
 
+    
 
     std::string line;
 

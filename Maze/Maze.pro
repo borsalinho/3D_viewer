@@ -10,10 +10,14 @@ CONFIG += c++17
 
 SOURCES += \
     main.cpp \
-    view/view.cpp
+    view/view.cpp \
+    controller/controller.cc \
+    model/model.cc
 
 HEADERS += \
-    view/view.h
+    view/view.h \
+    controller/controller.h \
+    model/model.h
 
 FORMS += \
     view.ui
