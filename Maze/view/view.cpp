@@ -3,8 +3,8 @@
 
 view::view(Controller *c, QWidget *parent)
     : QMainWindow(parent)
-    , c_(c)
     , ui_(new Ui::view)
+    , c_(c)
 {
     ui_->setupUi(this);
 }
@@ -21,22 +21,9 @@ void view::on_OpenFIle_clicked()
                                                "Выберите файл",
                                                QDir::homePath() + "/Downloads",
                                                "All Files (*)");
-
-
-    
-
-    std::string line;
-
-    std::ifstream in(str.toStdString()); // окрываем файл для чтения
-    if (in.is_open())
-    {
-        while (std::getline(in, line))
-        {
-            std::cout << line << std::endl;
-        }
-    }
-    in.close();  
-
     ui_->file_name->setText(str);
+
+    c_->OpenFile(str.toStdString());
+
 }
 

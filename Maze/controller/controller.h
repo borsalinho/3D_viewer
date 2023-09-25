@@ -9,6 +9,8 @@
 class Controller {
 public:
     Controller(Model* m) :m_(m){};
+
+    void OpenFile(std::string path);
 private:
     Model* m_;
 };
