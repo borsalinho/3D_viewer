@@ -19,11 +19,11 @@ public:
     }
 
     void OpenFile(std::string path);
-
-    
+    void OpenFile2(File file);
+    // bool IsValidFile(File file);
 private:
     File* file_;
-
+    // Validation* validation_;
 };
 
 #endif // MODEL_H
