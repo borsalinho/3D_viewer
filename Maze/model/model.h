@@ -29,10 +29,12 @@ public:
     void ParserFile(const std::string path){
         file_->ParserFile(path);
     }
+
+    void 
     
 private:
     File* file_;
-    
+    Painter* painter_;
 };
 
 #endif // MODEL_H

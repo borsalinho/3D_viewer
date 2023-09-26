@@ -20,6 +20,10 @@ public:
     void ParserFile(const std::string path){
         m_->ParserFile(path);
     }
+
+    void PaintMaze(std::vector<std::string> data){
+        m_->
+    }
 private:
     Model* m_;
 };

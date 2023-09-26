@@ -32,7 +32,9 @@ void view::on_OpenFIle_clicked()
         return;
     }
     
-    c_->ParserFile(str.toStdString());
+    // c_->ParserFile(str.toStdString());
+
+    c_->PaintMaze(c_->ParserFile(str.toStdString()));
 
 }
 

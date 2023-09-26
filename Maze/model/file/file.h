@@ -29,12 +29,16 @@ public:
     void ParserFile(const std::string path){
         data_ = f_parser_->ParserFile(path);
     }
+
+    std::vector<std::string>& GetData(){
+        return data_;
+    }
     
 private:
     FileValidator* f_validator_;
     FileParser* f_parser_;
     FileChecker* f_checker_;
-    std::vector<std::string> data_;
+    std::vector<std::string>* data_;
 };
 
 #endif // FILE_H
