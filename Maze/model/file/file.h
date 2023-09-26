@@ -3,8 +3,9 @@
 
 #include "fileOpener/fileOpener.h"
 #include "fileValidator/fileValidator.h"
+#include "fileChecker/fileChecker.h"
 
-class File{
+class File {
 public:
     File(){
         f_validator_ = new FileValidator();
@@ -14,20 +15,26 @@ public:
         if (f_validator_) delete f_validator_;
         if (f_opener_) delete f_opener_;
     }
-    void OpenFile(std::string path){
+
+    bool CheckFile(const std::string path){
+        return f_checker_->CheckFile(path);
+    }
+
+    bool ValidFile(const std::string path){
+        return f_validator_->ValidationFile(path);
+    }
+
+    void OpenFile(const std::string path){
         f_opener_->OpenFile(path);
     }
-    void OpenFile2(File file){
-        f_opener_->OpenFile2(file);
-    }
-    bool ValidFile(std::string path){
-        f_validator_->ValidationFile(path);
-    }
+    
+    
     
 private:
     FileValidator* f_validator_;
     FileOpener* f_opener_;
-    std::string path_;
+    FileChecker* f_checker_;
+    std::vector<std::string>* data_;
 };
 
 #endif // FILE_H

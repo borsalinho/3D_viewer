@@ -18,12 +18,21 @@ public:
         if (file_) delete  file_;
     }
 
-    void OpenFile(std::string path);
-    void OpenFile2(File file);
-    // bool IsValidFile(File file);
+    bool CheckFile(const std::string path){
+        return file_->CheckFile(path);
+    }
+    
+    bool IsValidFile(const std::string path){
+        return file_->ValidFile(path);
+    }
+
+    void OpenFile(const std::string path){
+        file_->OpenFile(path);
+    }
+    
 private:
     File* file_;
-    // Validation* validation_;
+    
 };
 
 #endif // MODEL_H

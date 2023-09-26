@@ -10,7 +10,16 @@ class Controller {
 public:
     Controller(Model* m) :m_(m){};
 
-    void OpenFile(std::string path);
+    bool CheckFile(const std::string path){
+        return m_->CheckFile(path);
+    }
+
+    bool ValidFile(const std::string path){
+        return m_->IsValidFile(path);
+    }
+    void OpenFile(const std::string path){
+        m_->OpenFile(path);
+    }
 private:
     Model* m_;
 };
