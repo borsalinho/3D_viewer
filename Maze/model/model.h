@@ -26,8 +26,8 @@ public:
         return file_->ValidFile(path);
     }
 
-    void OpenFile(const std::string path){
-        file_->OpenFile(path);
+    void ParserFile(const std::string path){
+        file_->ParserFile(path);
     }
     
 private:

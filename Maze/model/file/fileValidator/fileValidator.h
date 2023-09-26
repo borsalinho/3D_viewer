@@ -8,14 +8,18 @@ class FileValidator {
 public:
     bool ValidationFile(const std::string& path){
         std::string line;
-        std::ifstream in(path); // окрываем файл для чтения
-        if (in.is_open())
+        std::ifstream in; // окрываем файл для чтения
+        in.open(path);
+        while (std::getline(in, line))
         {
-            while (std::getline(in, line))
-            {
-                std::cout << line << std::endl;
+            for (char c : line){
+                if (!isdigit(c) && c != ' '){
+                    in.close();  
+                    return false;
+                }
             }
-        } 
+            
+        }
         in.close();  
         return true;
     }

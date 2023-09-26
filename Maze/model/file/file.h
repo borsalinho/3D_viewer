@@ -1,7 +1,7 @@
 #ifndef FILE_H
 #define FILE_H
 
-#include "fileOpener/fileOpener.h"
+#include "fileParser/fileParser.h"
 #include "fileValidator/fileValidator.h"
 #include "fileChecker/fileChecker.h"
 
@@ -9,11 +9,13 @@ class File {
 public:
     File(){
         f_validator_ = new FileValidator();
-        f_opener_ = new FileOpener();
+        f_parser_ = new FileParser();
+        f_checker_ = new FileChecker();
     }
     ~File() {
         if (f_validator_) delete f_validator_;
-        if (f_opener_) delete f_opener_;
+        if (f_parser_) delete f_parser_;
+        if (f_checker_) delete f_checker_;
     }
 
     bool CheckFile(const std::string path){
@@ -24,17 +26,15 @@ public:
         return f_validator_->ValidationFile(path);
     }
 
-    void OpenFile(const std::string path){
-        f_opener_->OpenFile(path);
+    void ParserFile(const std::string path){
+        data_ = f_parser_->ParserFile(path);
     }
-    
-    
     
 private:
     FileValidator* f_validator_;
-    FileOpener* f_opener_;
+    FileParser* f_parser_;
     FileChecker* f_checker_;
-    std::vector<std::string>* data_;
+    std::vector<std::string> data_;
 };
 
 #endif // FILE_H

@@ -22,6 +22,7 @@ void view::on_OpenFIle_clicked()
                                                QDir::homePath() + "/Downloads",
                                                "All Files (*)");
     ui_->file_name->setText(str);
+
     if (!c_->CheckFile(str.toStdString())) {
         std::cout << "file not found" << std::endl;
         return;
@@ -31,7 +32,7 @@ void view::on_OpenFIle_clicked()
         return;
     }
     
-    c_->OpenFile(str.toStdString());
+    c_->ParserFile(str.toStdString());
 
 }
 

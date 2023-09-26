@@ -17,8 +17,8 @@ public:
     bool ValidFile(const std::string path){
         return m_->IsValidFile(path);
     }
-    void OpenFile(const std::string path){
-        m_->OpenFile(path);
+    void ParserFile(const std::string path){
+        m_->ParserFile(path);
     }
 private:
     Model* m_;
