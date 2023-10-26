@@ -1,26 +1,25 @@
 #ifndef FILE_VALIDATOR_H
 #define FILE_VALIDATOR_H
 
-#include <fstream>
-#include <iostream>
 
-class FileValidator {
+#include "../file.h"
+
+class FileValidator : File {
 public:
-    bool ValidationFile(const std::string& path){
+    bool ValidationFile(File file){
+        
         std::string line;
-        std::ifstream in; // окрываем файл для чтения
-        in.open(path);
+        file.in_.open(file.path_);
         while (std::getline(in, line))
         {
             for (char c : line){
-                if (!isdigit(c) && c != ' '){
+                if (с != '1' && c != '0' && c != ' '){
                     in.close();  
                     return false;
                 }
             }
             
         }
-        in.close();  
         return true;
     }
 };

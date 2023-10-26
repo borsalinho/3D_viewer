@@ -10,19 +10,8 @@ class Controller {
 public:
     Controller(Model* m) :m_(m){};
 
-    bool CheckFile(const std::string path){
-        return m_->CheckFile(path);
-    }
-
-    bool ValidFile(const std::string path){
-        return m_->IsValidFile(path);
-    }
-    void ParserFile(const std::string path){
-        m_->ParserFile(path);
-    }
-
-    void PaintMaze(std::vector<std::string> data){
-        m_->
+    void CreateFile(const std::string& path){
+        m_->CreateFile(path);
     }
 private:
     Model* m_;
