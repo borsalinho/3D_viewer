@@ -24,20 +24,8 @@ void view::on_OpenFIle_clicked()
     
     ui_->file_name->setText(path);
 
-    c_->CreateFile(path.toStdString());
-
-    // if (!c_->CheckFile(str.toStdString())) {
-    //     std::cout << "file not found" << std::endl;
-    //     return;
-    // }
-    // if (!c_->ValidFile(str.toStdString())) {
-    //     std::cout << "file not valid" << std::endl;
-    //     return;
-    // }
+    // c_->CreateFile(path.toStdString());
     
-    // c_->ParserFile(str.toStdString());
-
-    // c_->PaintMaze(c_->ParserFile(str.toStdString()));
 
 }
 

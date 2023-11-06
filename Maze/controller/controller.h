@@ -10,9 +10,13 @@ class Controller {
 public:
     Controller(Model* m) :m_(m){};
 
-    void CreateFile(const std::string& path){
-        m_->CreateFile(path);
-    }
+    // void CreateFile(const std::string& path){
+    //     m_->CreateFile(path);
+    // }
+
+    // bool ValidFile(){
+    //     return m_->ValidFile();
+    // }
 private:
     Model* m_;
 };
