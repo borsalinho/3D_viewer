@@ -24,7 +24,7 @@ void view::on_OpenFIle_clicked()
     
     ui_->file_name->setText(path);
 
-    // c_->CreateFile(path.toStdString());
+    c_->FileProcessing(path.toStdString());
     
 
 }
