@@ -26,10 +26,11 @@ public:
 
         file_->OpenFile();
 
-        if(file_validator.IsValid(file_)){
+        
+        if(file_->GetFile()->is_open() && file_validator.IsValid(file_)){
             file_parser.Parsing(file_);
         } 
-        
+
         file_->CloseFile();
         
         return file_;

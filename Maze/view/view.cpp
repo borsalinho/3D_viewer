@@ -19,7 +19,7 @@ void view::on_OpenFIle_clicked()
 {
     QString path = QFileDialog::getOpenFileName(this,
                                                "Выберите файл",
-                                               QDir::homePath() + "/Downloads",
+                                               QDir::homePath() + "/Documents",
                                                "All Files (*)");
     
     ui_->file_name->setText(path);
