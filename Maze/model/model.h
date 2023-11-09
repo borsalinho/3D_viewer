@@ -10,7 +10,7 @@
 
 
 
-class Model { // Facade
+class Model { // Facade для Facade'ов
 public:
     Model() {};
 
@@ -24,8 +24,13 @@ public:
         FileValidator file_validator;
         FileParser file_parser;
 
-        file_validator.IsValid(file_);    
-        file_parser.Parsing(file_);
+        file_->OpenFile();
+
+        if(file_validator.IsValid(file_)){
+            file_parser.Parsing(file_);
+        } 
+        
+        file_->CloseFile();
         
         return file_;
     }

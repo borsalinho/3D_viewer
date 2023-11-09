@@ -10,10 +10,26 @@ class File {
 public:
     File(const std::string& path) : path_(path){};
 
+    void OpenFile(){
+        in_ = new std::ifstream(path_);
+    }
+
+    void CloseFile(){
+        in_->close();
+    }
+
+    std::ifstream* GetFile(){
+        return in_;
+    }
+
 private:
     const std::string path_;
     bool is_valid_;
-    std::vector<std::vector<unsigned int>>* data_;
+    unsigned int cols_;
+    unsigned int rows_;
+    std::vector<unsigned int>* wall_right_;
+    std::vector<unsigned int>* wall_down_;
+    std::ifstream* in_;
 };
 
 
