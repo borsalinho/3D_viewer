@@ -16,7 +16,6 @@ public:
 
     ~Model() {
         if (file_) delete file_;
-        // if (file_validator_) delete file_validator_;
     }
 
     File* FileProcessing(const std::string& path){
