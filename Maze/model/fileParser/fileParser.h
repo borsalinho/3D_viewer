@@ -4,28 +4,29 @@
 #include <iostream>
 #include <string>
 
-#include "../file/file.h"
+#include "../maze/maze.h"
 
 
-class FileParser {
+class FileParser { // надо дописать
 public:
     FileParser(){};
 
-    File* Parsing(File* file){
+    Maze Parsing(File* file){
         std::string line;
+        Maze maze;
         
         file->GetFile()->clear();
         file->GetFile()->seekg(0, file->GetFile()->beg);
-
-        // std::getline(*file->GetFile(),line);
-        // std::cout << "я getline " << line << std::endl;
+        
+        std::cout << "я парсер " << line << std::endl;
         while(std::getline(*file->GetFile(),line)){
             std::cout << line << std::endl;
         }
         
-        return file;
+        return maze;
     };
 private:
+
 };
 
 

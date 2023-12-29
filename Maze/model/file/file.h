@@ -3,7 +3,6 @@
 
 #include <iostream>
 #include <fstream>
-#include <vector>
 
 
 class File {
@@ -24,11 +23,7 @@ public:
 
 private:
     const std::string path_;
-    bool is_valid_;
-    unsigned int cols_;
-    unsigned int rows_;
-    std::vector<unsigned int>* wall_right_;
-    std::vector<unsigned int>* wall_down_;
+    // bool is_valid_;
     std::ifstream* in_;
 };
 
